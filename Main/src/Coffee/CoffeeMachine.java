@@ -1,18 +1,18 @@
-package Main;
+package Coffee;
 import java.util.Scanner;
 
-public class Coffee_Machine {
+public class CoffeeMachine {
 
     public static void main(String[] args) {
         setIngredients(getCups());
         }
     public static int getCups() {
-            Scanner in = new Scanner(System.in);
-            System.out.print("Write how many cups of coffee you will need...");
-            int cups = Integer.parseInt(in.nextLine());
-            System.out.println("For " + cups + " cups of coffee you will need:");
-            in.close();
-            return cups;
+        Scanner in = new Scanner(System.in);
+        System.out.print("Write how many cups of coffee you will need...");
+        int cups = Integer.parseInt(in.nextLine());
+        System.out.println("For " + cups + " cups of coffee you will need:");
+           in.close();
+           return cups;
         }
     public static void setIngredients(int cups) {
         int water = 200;
