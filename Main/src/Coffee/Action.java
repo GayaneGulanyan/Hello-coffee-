@@ -1,7 +1,6 @@
 package Coffee;
 
 import java.util.Scanner;
-import java.lang.Math;
 
 public class Action {
     public static int water=400;
@@ -35,7 +34,7 @@ public class Action {
         String coffeeType = in.nextLine();
         System.out.println("Please input cups quantity ");
         int cup = in.nextInt();
-        if (coffeeType.equals("Espresso"))                 // String comparison
+        if (coffeeType.equals("Espresso"))
         {
             Action.espresso(cup);
         } else {
@@ -48,8 +47,7 @@ public class Action {
     }
 
         public static void fillMachine()
-    {
-                                                                              //stepOne:;
+    {  stepOne: ;
         Scanner in = new Scanner(System.in);
         System.out.println("Please start to fill the water tank, input water volume... ");
         int water = in.nextInt();
@@ -159,7 +157,8 @@ public class Action {
             System.out.println("Available cups " + FindMin.findMinFrom4Args(avOfWater, avmilk, avOvCoffeeBeans, avOfdCups));
             return true;
         }
-        else {System.out.println("No enough ingredients, Please fill Machine");         //вернуться в степ1
+        else {System.out.println("No enough ingredients, Please fill Machine");
+        break stepOne; //вернуться в степ1
             return false;
         }
     }
