@@ -109,16 +109,15 @@ public class Action {
     public static boolean checkEspressoAvailability (int cup){
         float avOfWater=Action.water;
         float avOvCoffeeBeans = Action.coffeeBeans;
-        int avOfdCups = Action.coffeeBeans;
+        float avOfdCups = Action.coffeeBeans;
         System.out.println("Checking for Espresso availability...");
         avOfWater = avOfWater/(250*cup);
         avOvCoffeeBeans = avOvCoffeeBeans/(16*cup);
         avOfdCups = avOfdCups/cup;
         if (avOfWater>=1 & avOvCoffeeBeans>=1 & avOfdCups>=1){                // нужно округление
             System.out.println("You can order Espresso!");
+            System.out.println("Available cups " + FindMin.findMinFrom3Args(avOfWater, avOvCoffeeBeans, avOfdCups));
             return true;
-            /*Math.min(avOfWater, avOvCoffeeBeans);// добавить количество возможного заказа Math.max() import java.lang.Math;???
-            Action.espresso(как аргумент берем минимальное из(avOfWater, avOvCoffeeBeans, avOfdCups) );*/
         }
         else {System.out.println("No enough ingredients, Please fill Machine");
         return false; //вернуться в степ1
@@ -130,13 +129,14 @@ public class Action {
         float avOvCoffeeBeans = Action.coffeeBeans;
         float avmilk = Action.milk;
         int avOfdCups = Action.coffeeBeans;
-        System.out.println("Checking for Latte avalability...");
+        System.out.println("Checking for Latte availability...");
         avOfWater = avOfWater/(350*cup);
         avmilk = avmilk/(75*cup);
         avOvCoffeeBeans = avOvCoffeeBeans/(20*cup);
         avOfdCups = avOfdCups/cup;
         if (avOfWater>=1 & avmilk>=1 & avOvCoffeeBeans>=1 & avOfdCups>=1){
             System.out.println("You can order Latte!");
+            System.out.println("Available cups " + FindMin.findMinFrom4Args(avOfWater, avmilk, avOvCoffeeBeans, avOfdCups));
             return true;
             }
         else {
@@ -149,13 +149,14 @@ public class Action {
         float avOvCoffeeBeans = Action.coffeeBeans;
         float avmilk = Action.milk;
         int avOfdCups = Action.coffeeBeans;
-        System.out.println("Checking for Cappuccino avalability...");
+        System.out.println("Checking for Cappuccino availability...");
         avOfWater = avOfWater/(200*cup);
         avmilk = avmilk/(100*cup);
         avOvCoffeeBeans = avOvCoffeeBeans/(12*cup);
         avOfdCups = avOfdCups/cup;
         if (avOfWater>=1 & avmilk>=1 & avOvCoffeeBeans>=1 & avOfdCups>=1){
             System.out.println("You can order Cappuccino!");
+            System.out.println("Available cups " + FindMin.findMinFrom4Args(avOfWater, avmilk, avOvCoffeeBeans, avOfdCups));
             return true;
         }
         else {System.out.println("No enough ingredients, Please fill Machine");         //вернуться в степ1
