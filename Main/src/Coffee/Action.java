@@ -42,12 +42,12 @@ public class Action {
             if (coffeeType.equals("Latte"))
             {
                 Action.latte(cup);
-            } Action.cappuccino(cup);
+            } else Action.cappuccino(cup);
         }
         in.close();
     }
 
-    public static void fillMachine()
+        public static void fillMachine()
     {
                                                                               //stepOne:;
         Scanner in = new Scanner(System.in);
