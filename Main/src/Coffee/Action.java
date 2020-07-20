@@ -114,11 +114,11 @@ public class Action {
         avOfdCups = avOfdCups/cup;
         if (avOfWater>=1 & avOvCoffeeBeans>=1 & avOfdCups>=1){                // нужно округление
             System.out.println("You can order Espresso!");
-            System.out.println("Available cups " + FindMin.findMinFrom3Args(avOfWater, avOvCoffeeBeans, avOfdCups));
+            System.out.println("Available cups " + FindMin.min(avOfWater, avOvCoffeeBeans, avOfdCups));
             return true;
         }
         else {System.out.println("No enough ingredients, Please fill Machine");
-        return false; //вернуться в степ1
+        return false;                                                                                                       //вернуться в степ1
         }
     }
 
@@ -134,12 +134,12 @@ public class Action {
         avOfdCups = avOfdCups/cup;
         if (avOfWater>=1 & avmilk>=1 & avOvCoffeeBeans>=1 & avOfdCups>=1){
             System.out.println("You can order Latte!");
-            System.out.println("Available cups " + FindMin.findMinFrom4Args(avOfWater, avmilk, avOvCoffeeBeans, avOfdCups));
+            System.out.println("Available cups " + FindMin.min(avOfWater, avmilk, avOvCoffeeBeans, avOfdCups));
             return true;
             }
         else {
             System.out.println("No enough ingredients, Please fill Machine");
-            return false; //вернуться в степ1
+            return false;                                                                                                   //вернуться в степ1
         }
     }
     public static boolean checkCappuccinoAvailability (int cup){
@@ -154,11 +154,11 @@ public class Action {
         avOfdCups = avOfdCups/cup;
         if (avOfWater>=1 & avmilk>=1 & avOvCoffeeBeans>=1 & avOfdCups>=1){
             System.out.println("You can order Cappuccino!");
-            System.out.println("Available cups " + FindMin.findMinFrom4Args(avOfWater, avmilk, avOvCoffeeBeans, avOfdCups));
+            System.out.println("Available cups " + FindMin.min(avOfWater, avmilk, avOvCoffeeBeans, avOfdCups));
             return true;
         }
         else {System.out.println("No enough ingredients, Please fill Machine");
-        break stepOne; //вернуться в степ1
+                                                                                                                             //вернуться в степ1
             return false;
         }
     }
