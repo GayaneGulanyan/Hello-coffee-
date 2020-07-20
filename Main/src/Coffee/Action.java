@@ -14,7 +14,18 @@ public class Action {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter required action: 'buy', 'fill' or 'pull'");
         String actionType = in.nextLine();
-        if (actionType.equals("fill")) {
+        switch(actionType) {
+            case "fill":
+                Action.fillMachine();
+                break;
+            case "pull":
+                Action.pull();
+                break;
+            case "buy":
+                Action.orderCoffee(in);
+                break;
+        }
+        /*if (actionType.equals("fill")) {                      // old version of code with if using
                 Action.fillMachine();
             } else {
                 if (actionType.equals("pull")) {
@@ -22,7 +33,7 @@ public class Action {
                 } else {
                     Action.orderCoffee(in);
                 }
-            }
+            }*/
         }
 
     public static void orderCoffee(Scanner in){
