@@ -10,9 +10,9 @@ public class Action {
     public static int money=550;
 
     public static void getAction() {
-        System.out.println("Step 1");
+        System.out.println("Step 1: Waiting for the command");
         Scanner in = new Scanner(System.in);
-        System.out.println("Please enter required action: 'buy', 'fill' or 'pull'");
+        System.out.println("Please enter required action: 'buy', 'fill', 'pull', 'remaining' or 'exit'...");
         String actionType = in.nextLine();
         switch(actionType) {
             case "fill":
@@ -24,36 +24,46 @@ public class Action {
             case "buy":
                 Action.orderCoffee(in);
                 break;
+            case "remaining":
+                Action.machineStatus();
+                break;
+            case "exit":
+                break;
         }
-        /*if (actionType.equals("fill")) {                      // old version of code with if using
-                Action.fillMachine();
-            } else {
-                if (actionType.equals("pull")) {
-                    Action.pull();
-                } else {
-                    Action.orderCoffee(in);
-                }
-            }*/
-        }
+}
 
     public static void orderCoffee(Scanner in){
-        System.out.println("Step Order");
+        System.out.println("Step 2: Waiting for the order");
         System.out.println("Please input coffee type ");
         System.out.println("1. Espresso");
         System.out.println("2. Latte");
         System.out.println("3. Cappuccino");
+        System.out.println("or print 'back' to return... ");
         String coffeeType = in.nextLine();
-        System.out.println("Please input cups quantity ");
-        int cup = in.nextInt();
-        if (coffeeType.equals("Espresso"))
-        {
-            Action.espresso(cup);
-        } else {
-            if (coffeeType.equals("Latte"))
-            {
+
+
+        switch(coffeeType) {
+            case "Espresso":
+                System.out.println("Please input cups quantity ");
+                int cup = in.nextInt();
+                Action.espresso(cup);
+                break;
+            case "Latte":
+                System.out.println("Please input cups quantity ");
+                cup = in.nextInt();
                 Action.latte(cup);
-            } else Action.cappuccino(cup);
+                break;
+            case "Cappuccino":
+                System.out.println("Please input cups quantity ");
+                cup = in.nextInt();
+                Action.cappuccino(cup);
+                break;
+            case "back":
+                getAction();
+                in.close();
+                break;
         }
+
         in.close();
     }
 
