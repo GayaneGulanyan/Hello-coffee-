@@ -68,8 +68,7 @@ public class Action {
     }
 
     public static void fillMachine() {
-        stepOne:
-        ;
+
         Scanner in = new Scanner(System.in);
         System.out.println("Please start to fill the water tank, input water volume... ");
         int water = in.nextInt();
@@ -89,7 +88,7 @@ public class Action {
     public static void pull() {
         System.out.println("Collected " + Action.money + " dollars.");
         Action.money = 0;
-        // break stepOne; //вернуться в степ1
+
     }
 
     public static void machineStatus() {
