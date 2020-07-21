@@ -139,7 +139,7 @@ public class Action {
             return true;
         }
         else {System.out.println("No enough ingredients, Please fill Machine");
-        return false;                                                                                                       //вернуться в степ1
+        return false;
         }
     }
 
@@ -160,7 +160,7 @@ public class Action {
             }
         else {
             System.out.println("No enough ingredients, Please fill Machine");
-            return false;                                                                                                   //вернуться в степ1
+            return false;
         }
     }
     public static boolean checkCappuccinoAvailability (int cup){
@@ -179,7 +179,7 @@ public class Action {
             return true;
         }
         else {System.out.println("No enough ingredients, Please fill Machine");
-                                                                                                                             //вернуться в степ1
+
             return false;
         }
     }
