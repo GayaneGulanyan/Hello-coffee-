@@ -1,7 +1,7 @@
 package Coffee;
 
 import java.util.Scanner;
-
+import java.lang.Math;
 public class Action {
     public static int water = 400;
     public static int milk = 540;
@@ -138,7 +138,7 @@ public class Action {
         avOfdCups = avOfdCups / cup;
         if (avOfWater >= 1 & avOvCoffeeBeans >= 1 & avOfdCups >= 1) {                // нужно округление
             System.out.println("You can order Espresso!");
-            System.out.println("Available cups " + FindMin.min(avOfWater, avOvCoffeeBeans, avOfdCups));
+            System.out.println("Available cups " + Math.min(Math.min(avOfWater, avOvCoffeeBeans), avOfdCups));
             return true;
         } else {
             System.out.println("No enough ingredients, Please fill Machine");
@@ -158,7 +158,7 @@ public class Action {
         avOfdCups = avOfdCups / cup;
         if (avOfWater >= 1 & avmilk >= 1 & avOvCoffeeBeans >= 1 & avOfdCups >= 1) {
             System.out.println("You can order Latte!");
-            System.out.println("Available cups " + FindMin.min(avOfWater, avmilk, avOvCoffeeBeans, avOfdCups));
+            System.out.println("Available cups " + Math.min(Math.min(avOfWater, avmilk), Math.min(avOvCoffeeBeans, avOfdCups)));
             return true;
         } else {
             System.out.println("No enough ingredients, Please fill Machine");
@@ -178,7 +178,7 @@ public class Action {
         avOfdCups = avOfdCups / cup;
         if (avOfWater >= 1 & avmilk >= 1 & avOvCoffeeBeans >= 1 & avOfdCups >= 1) {
             System.out.println("You can order Cappuccino!");
-            System.out.println("Available cups " + FindMin.min(avOfWater, avmilk, avOvCoffeeBeans, avOfdCups));
+            System.out.println("Available cups " + Math.min(Math.min(avOfWater, avmilk), Math.min(avOvCoffeeBeans, avOfdCups)));
             return true;
         } else {
             System.out.println("No enough ingredients, Please fill Machine");
