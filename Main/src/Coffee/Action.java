@@ -3,18 +3,18 @@ package Coffee;
 import java.util.Scanner;
 
 public class Action {
-    public static int water=400;
-    public static int milk=540;
-    public static int coffeeBeans=120;
-    public static int dcups=9;
-    public static int money=550;
+    public static int water = 400;
+    public static int milk = 540;
+    public static int coffeeBeans = 120;
+    public static int dcups = 9;
+    public static int money = 550;
 
     public static void getAction() {
         System.out.println("Step 1: Waiting for the command");
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter required action: 'buy', 'fill', 'pull', 'remaining' or 'exit'...");
         String actionType = in.nextLine();
-        switch(actionType) {
+        switch (actionType) {
             case "fill":
                 Action.fillMachine();
                 break;
@@ -30,9 +30,9 @@ public class Action {
             case "exit":
                 break;
         }
-}
+    }
 
-    public static void orderCoffee(Scanner in){
+    public static void orderCoffee(Scanner in) {
         System.out.println("Step 2: Waiting for the order");
         System.out.println("Please input coffee type ");
         System.out.println("1. Espresso");
@@ -42,7 +42,7 @@ public class Action {
         String coffeeType = in.nextLine();
 
 
-        switch(coffeeType) {
+        switch (coffeeType) {
             case "Espresso":
                 System.out.println("Please input cups quantity ");
                 int cup = in.nextInt();
@@ -67,8 +67,9 @@ public class Action {
         in.close();
     }
 
-        public static void fillMachine()
-    {  stepOne: ;
+    public static void fillMachine() {
+        stepOne:
+        ;
         Scanner in = new Scanner(System.in);
         System.out.println("Please start to fill the water tank, input water volume... ");
         int water = in.nextInt();
@@ -85,19 +86,19 @@ public class Action {
         in.close();
     }
 
-    public static void pull(){
+    public static void pull() {
         System.out.println("Collected " + Action.money + " dollars.");
         Action.money = 0;
         // break stepOne; //вернуться в степ1
     }
 
-    public static void machineStatus(){
+    public static void machineStatus() {
         System.out.println("In Coffee Machine we have: " + Action.water + " ml of water, " + Action.milk + " ml of milk, " + Action.coffeeBeans + " gr of beans, " + Action.dcups + " cups.");
     }
 
-    public static void espresso(int cup){
+    public static void espresso(int cup) {
 
-        if (checkEspressoAvailability (cup) == true) {
+        if (checkEspressoAvailability(cup) == true) {
             Action.water -= (250 * cup);
             Action.coffeeBeans -= (16 * cup);
             Action.money += (4 * cup);
@@ -105,6 +106,7 @@ public class Action {
             System.out.println("Price is 4$ for cup. Thank you for your purchase, please take your espresso.");
         }
     }
+
     public static void latte(int cup) {
         if (checkLatteAvailability(cup) == true) {
             Action.water -= (350 * cup);
@@ -115,6 +117,7 @@ public class Action {
             System.out.println("Price is 7$ for cup. Thank you for your purchase, please take your latte.");
         }
     }
+
     public static void cappuccino(int cup) {
         if (checkCappuccinoAvailability(cup) == true) {
             Action.water -= (200 * cup);
@@ -125,60 +128,61 @@ public class Action {
             System.out.println("Price is 6$ for cup. Thank you for your purchase, please take your cappuccino.");
         }
     }
-    public static boolean checkEspressoAvailability (int cup){
-        float avOfWater=Action.water;
+
+    public static boolean checkEspressoAvailability(int cup) {
+        float avOfWater = Action.water;
         float avOvCoffeeBeans = Action.coffeeBeans;
         float avOfdCups = Action.coffeeBeans;
         System.out.println("Checking for Espresso availability...");
-        avOfWater = avOfWater/(250*cup);
-        avOvCoffeeBeans = avOvCoffeeBeans/(16*cup);
-        avOfdCups = avOfdCups/cup;
-        if (avOfWater>=1 & avOvCoffeeBeans>=1 & avOfdCups>=1){                // нужно округление
+        avOfWater = avOfWater / (250 * cup);
+        avOvCoffeeBeans = avOvCoffeeBeans / (16 * cup);
+        avOfdCups = avOfdCups / cup;
+        if (avOfWater >= 1 & avOvCoffeeBeans >= 1 & avOfdCups >= 1) {                // нужно округление
             System.out.println("You can order Espresso!");
             System.out.println("Available cups " + FindMin.min(avOfWater, avOvCoffeeBeans, avOfdCups));
             return true;
-        }
-        else {System.out.println("No enough ingredients, Please fill Machine");
-        return false;
-        }
-    }
-
-    public static boolean checkLatteAvailability (int cup){
-        float avOfWater=Action.water;
-        float avOvCoffeeBeans = Action.coffeeBeans;
-        float avmilk = Action.milk;
-        int avOfdCups = Action.coffeeBeans;
-        System.out.println("Checking for Latte availability...");
-        avOfWater = avOfWater/(350*cup);
-        avmilk = avmilk/(75*cup);
-        avOvCoffeeBeans = avOvCoffeeBeans/(20*cup);
-        avOfdCups = avOfdCups/cup;
-        if (avOfWater>=1 & avmilk>=1 & avOvCoffeeBeans>=1 & avOfdCups>=1){
-            System.out.println("You can order Latte!");
-            System.out.println("Available cups " + FindMin.min(avOfWater, avmilk, avOvCoffeeBeans, avOfdCups));
-            return true;
-            }
-        else {
+        } else {
             System.out.println("No enough ingredients, Please fill Machine");
             return false;
         }
     }
-    public static boolean checkCappuccinoAvailability (int cup){
-        float avOfWater=Action.water;
+
+    public static boolean checkLatteAvailability(int cup) {
+        float avOfWater = Action.water;
+        float avOvCoffeeBeans = Action.coffeeBeans;
+        float avmilk = Action.milk;
+        int avOfdCups = Action.coffeeBeans;
+        System.out.println("Checking for Latte availability...");
+        avOfWater = avOfWater / (350 * cup);
+        avmilk = avmilk / (75 * cup);
+        avOvCoffeeBeans = avOvCoffeeBeans / (20 * cup);
+        avOfdCups = avOfdCups / cup;
+        if (avOfWater >= 1 & avmilk >= 1 & avOvCoffeeBeans >= 1 & avOfdCups >= 1) {
+            System.out.println("You can order Latte!");
+            System.out.println("Available cups " + FindMin.min(avOfWater, avmilk, avOvCoffeeBeans, avOfdCups));
+            return true;
+        } else {
+            System.out.println("No enough ingredients, Please fill Machine");
+            return false;
+        }
+    }
+
+    public static boolean checkCappuccinoAvailability(int cup) {
+        float avOfWater = Action.water;
         float avOvCoffeeBeans = Action.coffeeBeans;
         float avmilk = Action.milk;
         int avOfdCups = Action.coffeeBeans;
         System.out.println("Checking for Cappuccino availability...");
-        avOfWater = avOfWater/(200*cup);
-        avmilk = avmilk/(100*cup);
-        avOvCoffeeBeans = avOvCoffeeBeans/(12*cup);
-        avOfdCups = avOfdCups/cup;
-        if (avOfWater>=1 & avmilk>=1 & avOvCoffeeBeans>=1 & avOfdCups>=1){
+        avOfWater = avOfWater / (200 * cup);
+        avmilk = avmilk / (100 * cup);
+        avOvCoffeeBeans = avOvCoffeeBeans / (12 * cup);
+        avOfdCups = avOfdCups / cup;
+        if (avOfWater >= 1 & avmilk >= 1 & avOvCoffeeBeans >= 1 & avOfdCups >= 1) {
             System.out.println("You can order Cappuccino!");
             System.out.println("Available cups " + FindMin.min(avOfWater, avmilk, avOvCoffeeBeans, avOfdCups));
             return true;
-        }
-        else {System.out.println("No enough ingredients, Please fill Machine");
+        } else {
+            System.out.println("No enough ingredients, Please fill Machine");
 
             return false;
         }

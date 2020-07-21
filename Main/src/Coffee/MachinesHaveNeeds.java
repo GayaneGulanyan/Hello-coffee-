@@ -14,6 +14,7 @@ public class MachinesHaveNeeds {
         in.close();
         return cups;
     }
+
     public static void setIngredients(int cups) {
         int water = 200;
         int milk = 50;
@@ -23,7 +24,8 @@ public class MachinesHaveNeeds {
         coffeeBeans = cups * coffeeBeans;
         getIngredients(water, milk, coffeeBeans);
     }
-    public static void getIngredients(int water, int milk, int coffeeBeans){
+
+    public static void getIngredients(int water, int milk, int coffeeBeans) {
         System.out.println(water + " ml of water");
         System.out.println(milk + " ml of milk");
         System.out.println(coffeeBeans + " gr of coffee beans");
