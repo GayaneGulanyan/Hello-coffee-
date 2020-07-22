@@ -18,7 +18,7 @@ public class CoffeeMachineSimulator {
 
 
     // method myMethod check coffee machine mode, and call appropriate method
-    public void myMethod(String inputString) {
+    public void machineStateStaus(String inputString) {
 
         switch (mode) {
             case 1:

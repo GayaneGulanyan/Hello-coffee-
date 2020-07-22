@@ -11,7 +11,7 @@ public class CoffeeMachineSimulatorMain {
         System.out.println("Write action (buy, fill, take, remaining, exit):");
         getCurrentLine = getString();
         CoffeeMachineSimulator coffeeMachineSimulator = new CoffeeMachineSimulator();
-        coffeeMachineSimulator.myMethod(getCurrentLine);
+        coffeeMachineSimulator.machineStateStaus(getCurrentLine);
 
 
     }
