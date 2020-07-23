@@ -9,15 +9,15 @@ public class CoffeeMachineSimulatorMain {
     //printing actions, call myMethod
     public static void main(String[] args) {
         System.out.println("Write action (buy, fill, take, remaining, exit):");
-        getCurrentLine = getString();
+        getCurrentLine = getLineFromConsole();
         CoffeeMachineSimulator coffeeMachineSimulator = new CoffeeMachineSimulator();
         coffeeMachineSimulator.machineStateStaus(getCurrentLine);
 
 
     }
 
-    //method getString read input from console
-    public static String getString() {
+    //method getLineFromConsole read input from console
+    public static String getLineFromConsole() {
         Scanner in = new Scanner(System.in);
         String inputString = in.nextLine();
         return inputString;

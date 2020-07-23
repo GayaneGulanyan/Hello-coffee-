@@ -57,7 +57,7 @@ public class CoffeeMachineSimulator {
     public void buy() {
         mode = 1;
         System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:");
-        String coffeeType = CoffeeMachineSimulatorMain.getString();
+        String coffeeType = CoffeeMachineSimulatorMain.getLineFromConsole();
         switch (coffeeType) {
             case "1":
                 espresso();
@@ -70,7 +70,7 @@ public class CoffeeMachineSimulator {
                 break;
             case "back":
                 System.out.println("Write action (buy, fill, take, remaining, exit):");
-                action(CoffeeMachineSimulatorMain.getString());
+                action(CoffeeMachineSimulatorMain.getLineFromConsole());
                 break;
 
         }
@@ -88,7 +88,7 @@ public class CoffeeMachineSimulator {
             money += 4;
             disCups -= 1;
             System.out.println("Write action (buy, fill, take, remaining, exit):");
-            action(CoffeeMachineSimulatorMain.getString());
+            action(CoffeeMachineSimulatorMain.getLineFromConsole());
         } else if (water < 250) {
             System.out.println("Sorry, not enough water!");
         } else if (coffeeBeans < 16) {
@@ -98,7 +98,7 @@ public class CoffeeMachineSimulator {
 
         }
         System.out.println("Write action (buy, fill, take, remaining, exit):");
-        action(CoffeeMachineSimulatorMain.getString());
+        action(CoffeeMachineSimulatorMain.getLineFromConsole());
 
     }
 
@@ -113,7 +113,7 @@ public class CoffeeMachineSimulator {
             money += 6;
             disCups -= 1;
             System.out.println("Write action (buy, fill, take, remaining, exit):");
-            action(CoffeeMachineSimulatorMain.getString());
+            action(CoffeeMachineSimulatorMain.getLineFromConsole());
         } else if (water < 200) {
             System.out.println("Sorry, not enough water!");
         } else if (milk < 100) {
@@ -124,7 +124,7 @@ public class CoffeeMachineSimulator {
             System.out.println("Sorry, not enough disposable cups");
         }
         System.out.println("Write action (buy, fill, take, remaining, exit):");
-        action(CoffeeMachineSimulatorMain.getString());
+        action(CoffeeMachineSimulatorMain.getLineFromConsole());
     }
 
     //method latte which checks if available ingredients, makes a coffee,
@@ -138,7 +138,7 @@ public class CoffeeMachineSimulator {
             money += 7;
             disCups -= 1;
             System.out.println("Write action (buy, fill, take, remaining, exit):");
-            action(CoffeeMachineSimulatorMain.getString());
+            action(CoffeeMachineSimulatorMain.getLineFromConsole());
         } else if (water < 350) {
             System.out.println("Sorry, not enough water!");
         } else if (milk < 75) {
@@ -149,7 +149,7 @@ public class CoffeeMachineSimulator {
             System.out.println("Sorry, not enough disposable cups");
         }
         System.out.println("Write action (buy, fill, take, remaining, exit):");
-        action(CoffeeMachineSimulatorMain.getString());
+        action(CoffeeMachineSimulatorMain.getLineFromConsole());
     }
 
     //method fill asks to user how much ingredients wants to add to coffee machine
@@ -167,7 +167,7 @@ public class CoffeeMachineSimulator {
         Scanner scanner4 = new Scanner(System.in);
         disCups += scanner4.nextInt();
         System.out.println("Write action (buy, fill, take, remaining, exit):");
-        action(CoffeeMachineSimulatorMain.getString());
+        action(CoffeeMachineSimulatorMain.getLineFromConsole());
     }
 
     // method take gives money from coffee machine to owner
@@ -175,7 +175,7 @@ public class CoffeeMachineSimulator {
         System.out.println("I gave you " + money + "$");
         money = 0;
         System.out.println("Write action (buy, fill, take, remaining, exit):");
-        action(CoffeeMachineSimulatorMain.getString());
+        action(CoffeeMachineSimulatorMain.getLineFromConsole());
     }
 
     //method remaining gives user how much ingredients and money is available
@@ -187,7 +187,7 @@ public class CoffeeMachineSimulator {
                 disCups + " of disposable cups\n" +
                 money + " of money\n");
         System.out.println("Write action (buy, fill, take, remaining, exit):");
-        action(CoffeeMachineSimulatorMain.getString());
+        action(CoffeeMachineSimulatorMain.getLineFromConsole());
 
     }
 
